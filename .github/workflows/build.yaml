@@ -15,10 +15,10 @@ jobs:
     - name: "🏎️ Pull image from cache"
       if: ${{github.event_name != 'workflow_dispatch'}}
       run: docker pull "registry.k8s.pwagner.net/library/duplicity:latest"
-      
+    
     - name: "🚧 Build image"
       run: docker build --cache-from "registry.k8s.pwagner.net/library/duplicity:latest" -t "registry.k8s.pwagner.net/library/duplicity:${{github.sha}}" .
-      
+    
     - name: "🕵️ Scan image"
       uses: docker://registry.k8s.pwagner.net/library/trivy:latest@sha256:612efcc0468d64af645f47280565ed6e85113d112c47e14e4f6f396e23f67662
       with:
