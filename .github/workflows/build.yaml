@@ -1,0 +1,37 @@
+name: Build
+on:
+  push:
+  # workflow_dispatch is a glassbreak that rebuilds without cache
+  # intended to hotfix packages not yet in the base image
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: self-hosted
+    env:
+      IMAGE: duplicity
+      REGISTRY: registry.k8s.pwagner.net
+    steps:
+      - name: "🤓 Fetching code"
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # renovate: tag=v2
+      - name: "🏎️ Pull image from cache"
+        if: ${{github.event_name != 'workflow_dispatch'}}
+        run: docker pull "$REGISTRY/library/$IMAGE:latest"
+      - name: "🚧 Build image"
+        run: docker build --cache-from "$REGISTRY/library/$IMAGE:latest" -t "$REGISTRY/library/$IMAGE" .
+      - name: "🕵️ Scan image"
+        uses: docker://registry.k8s.pwagner.net/library/trivy:latest@sha256:612efcc0468d64af645f47280565ed6e85113d112c47e14e4f6f396e23f67662
+        with:
+          args: "${{env.REGISTRY}}/library/${{env.IMAGE}}"
+      # Deploy 'main' branch to registry
+      - name: "🚢 Login to registry for publish"
+        if: ${{github.ref == 'refs/heads/main'}}
+        uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9 # renovate: tag=v1
+        with:
+          registry: ${{env.REGISTRY}}
+          username: robot$github-actions
+          password: ${{secrets.REGISTRY_K8S_PASSWORD}}
+      - name: "🚢 Publish to registry"
+        if: ${{github.ref == 'refs/heads/main'}}
+        run: docker push "$REGISTRY/library/$IMAGE"
