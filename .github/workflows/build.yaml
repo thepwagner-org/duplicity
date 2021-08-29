@@ -4,6 +4,7 @@ on:
   # workflow_dispatch is a glassbreak that rebuilds without cache
   # intended to hotfix packages not yet in the base image
   workflow_dispatch:
+  
 permissions:
   contents: read
 jobs:
