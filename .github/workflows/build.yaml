@@ -21,7 +21,7 @@ jobs:
       run: docker build --cache-from "registry.k8s.pwagner.net/library/duplicity:latest" -t "registry.k8s.pwagner.net/library/duplicity:${{github.sha}}" .
     
     - name: "🕵️ Scan image"
-      uses: docker://registry.k8s.pwagner.net/library/trivy:latest@sha256:4ba3ca522e5a7a9bcc559358fe98c2aa7e97bb30c3d75bd1253edfb9fd3ad006
+      uses: docker://registry.k8s.pwagner.net/library/trivy:latest@sha256:8bbbc4e060442af4a537ad1c6f7be738cbfe66bcd7fd5da986b3303b293c6692
       with:
         args: registry.k8s.pwagner.net/library/duplicity:${{github.sha}}
     # Deploy 'main' branch to registry
