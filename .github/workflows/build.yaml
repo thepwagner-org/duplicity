@@ -15,7 +15,7 @@ jobs:
       uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # renovate: tag=v2
     - name: "🏎️ Pull image from cache"
       if: ${{github.event_name != 'workflow_dispatch'}}
-      run: docker pull "registry.k8s.pwagner.net/library/duplicity:latest"
+      run: docker pull "registry.k8s.pwagner.net/library/duplicity:latest" || true
     
     - name: "🚧 Build image"
       run: docker build --cache-from "registry.k8s.pwagner.net/library/duplicity:latest" -t "registry.k8s.pwagner.net/library/duplicity:${{github.sha}}" .
