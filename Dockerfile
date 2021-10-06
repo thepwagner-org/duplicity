@@ -1,4 +1,4 @@
-FROM registry.k8s.pwagner.net/library/debian-bullseye:latest@sha256:a13ba2d3d58b957db1c658d6c928e537a2f44e98fda6cdf22fa7fe44eb27c7ab
+FROM registry.k8s.pwagner.net/library/debian-bullseye:latest@sha256:d0c141a7055de0c0784375fe9d21b04f143b34143b67194d44185fdc6956ddce
 
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get -q update && \
