@@ -1,7 +1,5 @@
 rules:
-- pattern: "auth.docker.io/.*"
-  action: NO_STORE
-- pattern: "registry-1.docker.io/v2/library/debian/.*"
+- pattern: "registry.k8s.pwagner.net/v2/library/debian-bullseye/.*"
   action: ALLOW
 - pattern: "debian.mirror.rafal.ca/debian.*/InRelease"
   action: REFRESH
