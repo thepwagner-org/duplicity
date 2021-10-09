@@ -1,24 +1,18 @@
 debian.mirror.rafal.ca/debian-security/dists/bullseye-security/InRelease:
     responseCode: 200
     contentLength: 44101
-    sha256: c22b11ed3e6c418557c8e1b907d2167d6817942e4cd991455ec9c2a53136c68f
-    shake256: 7865def673e4ddd53bfa5d26dd44c403e872c77123d943650529b1f974a77e4adf9b58f5c31e1026bf9ac9ef285c9563697ada66a2ec8cccdcf9ba6e94b665ab
-? debian.mirror.rafal.ca/debian-security/dists/bullseye-security/main/binary-amd64/by-hash/SHA256/8a021f3d984d5178132e928eeae3806020066a860c4403f6d6e121d1a265df65
+    sha256: e2bb1fbafd648ae53b97d5e481417756004c8f4bb1ef4c8270c722c5f703e5ea
+    shake256: f7b7aa91d2fdbbef70442fde323df30d4f0856005ea30efe9e6c1da278b208c2d7114ed908cd10e1ba71eb11b75fe1c9c2e4b0a598eb8e45f116c77077b6dc49
+? debian.mirror.rafal.ca/debian-security/dists/bullseye-security/main/binary-amd64/by-hash/SHA256/1a00d795dce2a44e847e0f0729735c65b059bbb1f83d5f60903e3c6a636b15ca
 :   responseCode: 200
-    contentLength: 44156
-    sha256: 8a021f3d984d5178132e928eeae3806020066a860c4403f6d6e121d1a265df65
-    shake256: 36049a0c220ef4dc00f3424f6a7c38f2a47a80c058204a2eebbc986b6cac945bbdeceb4e4bbc1e3c43accaab1d7becfed15851f8ae8fc35439b4e70c9ea9a2ce
-debian.mirror.rafal.ca/debian-security/pool/updates/main/o/openssl/openssl_1.1.1k-1+deb11u1_amd64.deb:
-    responseCode: 200
-    contentType: application/x-debian-package
-    contentLength: 850888
-    sha256: ed998755dabb96ffe107c2d41ce685ecbb4fa200f7825ff82c1092f8334bf3cb
-    shake256: c7e76633cf3a4160b20539583db24514eb573d131d1d2e05dadb7e4145fbfc398e916a4f8e77f43324413333c40fca10032c8a740e46a42a8bcf17cbdd4fc9e0
+    contentLength: 44168
+    sha256: 1a00d795dce2a44e847e0f0729735c65b059bbb1f83d5f60903e3c6a636b15ca
+    shake256: c88becb664a62a75940f11279c192d4d07fc1411354e36219455c641e49396aeb2ec3064cd509a87e2066e56862cb7128b944374d32d98d455aeba7471cb2789
 debian.mirror.rafal.ca/debian/dists/bullseye-updates/InRelease:
     responseCode: 200
     contentLength: 39353
-    sha256: 4978f9aa72729c487193505531a56a171eb8a7b72c7ebd6a01f98a9edfcbd693
-    shake256: c515fc2b8408faedaf9c58415092a85650e422aa491058785ef1899047648605abf9afe8ade0d64457a2aae9e5f9d2651404df65048503a9cc674b21a6d95244
+    sha256: fd98d50994746888780e11b9f4d0039044a2d3dcd96622d9f8ee7d39ff1126cc
+    shake256: a7b07a5c816229976f298c15bb5cd8d184cbce8eab9aea5290751caf65e53e60993b69418661fc87b0b2b41ef1d2fc78fc7ac4df86137a8932c8e56acd77d3d5
 ? debian.mirror.rafal.ca/debian/dists/bullseye-updates/main/binary-amd64/by-hash/SHA256/942f49679a50f19ca65a74ae199c161659d505b9aca8bdfa62dfe9af74d468fd
 :   responseCode: 200
     contentLength: 2300
@@ -26,19 +20,19 @@ debian.mirror.rafal.ca/debian/dists/bullseye-updates/InRelease:
     shake256: bd22806234ab94e23aa1d03117b2a999085e5e891a447858517e46bcdaa2d854d5339b1fb1bf9a8a9010de9c191b6ec8dde6dcff3c5ab8c81a1f3dcf9c8dc9a4
 debian.mirror.rafal.ca/debian/dists/bullseye/InRelease:
     responseCode: 200
-    contentLength: 112605
-    sha256: 25be8af75cbf61f842be3ade6818f2c058b020c61979fe38aa2989dc3947b1c5
-    shake256: 3936b3f945b2e284b2cdeeee174ad4907983671c9e2e8209853eb5d2f21f0816855fe244c27ad745f6e9a5184f1653d311286d18a75d94056550c7e517dc3175
-? debian.mirror.rafal.ca/debian/dists/bullseye/contrib/binary-amd64/by-hash/SHA256/ac91d71634f2a7b49e5de0d6415510d959c6f6290db649b06efa0d14c1b0f359
+    contentLength: 115945
+    sha256: ac0750571305f7a531bae7489216a053f9a02befb6bfbb356ddd5a4e95840b17
+    shake256: 6eb20c2f9753dc5d30d4307efb616bd37d19920696776704ce2730bce013f89b3dd945db7f289a8ee0aa80896143eed549d72c4830d9af4511dceaf7c50c7227
+? debian.mirror.rafal.ca/debian/dists/bullseye/contrib/binary-amd64/by-hash/SHA256/104237b66d5612b700de4a80322d330a2e6b112d0bad0a961801a51c67351a11
 :   responseCode: 200
-    contentLength: 50448
-    sha256: ac91d71634f2a7b49e5de0d6415510d959c6f6290db649b06efa0d14c1b0f359
-    shake256: fbdf33c897064512e6ad9c1485abe1bae0666d258f6790edb1196cb1f3d88be515201cbc0df021d6f85fef436edca9570d695f4a1bb381425d7856502cff5f45
-? debian.mirror.rafal.ca/debian/dists/bullseye/main/binary-amd64/by-hash/SHA256/2dd487cd20eabf2aaecb3371d26543cfaec0cc7e7dd0846f2aee6b79574374ad
+    contentLength: 50468
+    sha256: 104237b66d5612b700de4a80322d330a2e6b112d0bad0a961801a51c67351a11
+    shake256: 25a732c924cf4ba79cdbbaad14c803324826cef921724f788eae05c87af639e8f8d3bf7c29cc083a5e4c34d5303a1bde5f63660d88321371960ccd27f92750ad
+? debian.mirror.rafal.ca/debian/dists/bullseye/main/binary-amd64/by-hash/SHA256/f9ea21b854a4212513001d30bfa5c6579e35b3a6dd48d6cc376f2296219c14ed
 :   responseCode: 200
-    contentLength: 8177736
-    sha256: 2dd487cd20eabf2aaecb3371d26543cfaec0cc7e7dd0846f2aee6b79574374ad
-    shake256: be38eee5afd9198394c3c2dc35d401efa18ece9e6bf3f8a673eb57d24403faece35771ee7d64c98fde0ec1024b5af7aa3cae1c22274f63bc256e5914c82af80f
+    contentLength: 8179992
+    sha256: f9ea21b854a4212513001d30bfa5c6579e35b3a6dd48d6cc376f2296219c14ed
+    shake256: 03eb7f93a50d0110bf5ed26a3ab323fb6a969c68a706a5972061de58d10f4dc002ecc43e97085dd475acc421e51a7dc9f630c39386f37fd06a323c7403fa2695
 ? debian.mirror.rafal.ca/debian/dists/bullseye/non-free/binary-amd64/by-hash/SHA256/8193c44c1159df8a67b40d448049dbdef5382ff88c64247b3531d4ac3ff23292
 :   responseCode: 200
     contentLength: 93776
@@ -200,6 +194,12 @@ debian.mirror.rafal.ca/debian/pool/main/o/openldap/libldap-2.4-2_2.4.57+dfsg-3_a
     contentLength: 231968
     sha256: 4186d0d3f086202d391da49d1bb5ced6dde5eafba1dbcffef9a8e1238a7ef7c3
     shake256: 52514fad59b9c84b51e236c0066f3afc25afd52715c84c8695c28a1caa1c8b6d80d5299579481ea86774e92e599bb0bde5a7c5481adadf47377f39302b2f48a0
+debian.mirror.rafal.ca/debian/pool/main/o/openssl/openssl_1.1.1k-1+deb11u1_amd64.deb:
+    responseCode: 200
+    contentType: application/x-debian-package
+    contentLength: 850888
+    sha256: ed998755dabb96ffe107c2d41ce685ecbb4fa200f7825ff82c1092f8334bf3cb
+    shake256: c7e76633cf3a4160b20539583db24514eb573d131d1d2e05dadb7e4145fbfc398e916a4f8e77f43324413333c40fca10032c8a740e46a42a8bcf17cbdd4fc9e0
 debian.mirror.rafal.ca/debian/pool/main/p/pinentry/pinentry-curses_1.1.0-4_amd64.deb:
     responseCode: 200
     contentType: application/x-debian-package
