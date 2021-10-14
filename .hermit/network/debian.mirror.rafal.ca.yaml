@@ -1,18 +1,18 @@
 debian.mirror.rafal.ca/debian-security/dists/bullseye-security/InRelease:
     responseCode: 200
     contentLength: 44101
-    sha256: 481fc429721650e90fee36284895871e061042ca741b2a7c4cfad7354ae73c5e
-    shake256: ab093c3e9b9572bd92e5b4d7897501c517e62286aec9d33314199bb1753b32ac8535e538a4740706826e5036d7ae7dd3aa659d9a584a8ea445335b78cfe88be5
-? debian.mirror.rafal.ca/debian-security/dists/bullseye-security/main/binary-amd64/by-hash/SHA256/1a9af03e6767b3184ce60199fdf4731518a80778d9eeca5ae060118b7201f03c
+    sha256: c3cdfbc50768e1d8ebf7f3e5e92faffcb4e95c51b9fa54b190025c1a46fffe3a
+    shake256: dc7528f3a416981cb876a09f77f99a76ce0ae39780b2a02a9e4482617cdd9514cd43d089b06701826190104b97368171c7affe27c2ca810ec1d2ed46fcd7982d
+? debian.mirror.rafal.ca/debian-security/dists/bullseye-security/main/binary-amd64/by-hash/SHA256/9be3a0aad0aae138ccc0922a365b63608157efc24cad619f2f77dc67a0bcf1fe
 :   responseCode: 200
-    contentLength: 47368
-    sha256: 1a9af03e6767b3184ce60199fdf4731518a80778d9eeca5ae060118b7201f03c
-    shake256: 0891fd0c1260324ea1959a7dd7f51f7b2324ca786040594cb5f6dd0a2cef755bc60b4f1e41342b4cc3c1dce3faacd9b7838155be720d293e3601388a14594f1c
+    contentLength: 47980
+    sha256: 9be3a0aad0aae138ccc0922a365b63608157efc24cad619f2f77dc67a0bcf1fe
+    shake256: 94a34aa8679ebb0b4c52ae3c3841186ec93c3ea641bce184822caae70bca19fb8529ecdd3092d2b8053484cfcf6b9e2fbcda5f052cbdfebcb0994c979533afb2
 debian.mirror.rafal.ca/debian/dists/bullseye-updates/InRelease:
     responseCode: 200
     contentLength: 39353
-    sha256: 50b5731e18f40ab151054d541d3118ab7156c87649c159925be78fd7a7fe64e4
-    shake256: ad903bcaa38a1b06b08c07cd5de11a919885b055e54e249f9e97dcea551f352df6a70227cb2323208b938a973cb7ed435b2f225cd9342b015927209a3ce9cf07
+    sha256: 60dbabdfbe46bdc7cbeb7105d151d6eafe24959a690e44e1b87c4d50d2a7135d
+    shake256: 3fcc489b7d3db010702c486b14dde7421d3b04f01b4752701cc29d4b6c3b453ce7426b40f6ee54274c3078bda3f663f4bafc2e5d02c76a6428227b0b2ff6fc7e
 ? debian.mirror.rafal.ca/debian/dists/bullseye-updates/main/binary-amd64/by-hash/SHA256/942f49679a50f19ca65a74ae199c161659d505b9aca8bdfa62dfe9af74d468fd
 :   responseCode: 200
     contentLength: 2300
