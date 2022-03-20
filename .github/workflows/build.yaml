@@ -1,0 +1,76 @@
+name: Build
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+permissions:
+  contents: write 
+  actions: write
+  pull-requests: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "🌎 Fetching code"
+        uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846 # tag=v3
+        with:
+          persist-credentials: false
+      - name: "🌎 Logging in to Docker Registry"
+        uses: docker/login-action@dd4fa0671be5250ee6f50aedf4cb05514abda2c7 # tag=v1
+        with:
+          registry: ghcr.io
+          username: ${{github.repository_owner}}
+          password: ${{secrets.WAPWAGNER_TOKEN}}
+
+      - name: "🚧 Building image"
+        run: docker build -t ghcr.io/thepwagner-org/duplicity:${{github.sha}} .
+
+      - name: "🕵️ Setup Syft"
+        uses: anchore/sbom-action/download-syft@ce4a7cf05d7b684693d7b6bba97bfbee56806edb # tag=v0.7.0
+      - name: "🕵️ Generate SBOM"
+        run: syft packages -o spdx-json=sbom.spdx.json ghcr.io/thepwagner-org/duplicity:${{github.sha}}
+      - name: "🕵️ Upload SBOM"
+        uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535 # tag=v3
+        with:
+          name: spdx-json
+          path: sbom.spdx.json
+
+      - name: "👮 Verify SBOM"
+        run: |
+          # Exit if packages match the committed SBOM
+          BUILT_PACKAGES=$(jq -r '.packages[].externalRefs[] | select(.referenceType=="purl") .referenceLocator' sbom.spdx.json | sort)
+          echo "Built packages"
+          echo "$BUILT_PACKAGES" | tee built.txt
+          echo ""
+          echo ""
+          echo ""
+          
+          STORED_PACKAGES=$(jq -r '.packages[].externalRefs[] | select(.referenceType=="purl") .referenceLocator' Dockerfile.spdx.json| sort)
+          echo "Stored packages:"
+          echo "$STORED_PACKAGES" | tee stored.txt
+          [ "$(echo ${BUILT_PACKAGES} | sha512sum)" = "$(echo ${STORED_PACKAGES} | sha512sum)" ] && exit 0
+
+          (diff -U 0 stored.txt built.txt || true) > pkgdiff.txt
+
+          # On mismatch, commit and push an update:
+          git reset origin/${GITHUB_HEAD_REF}
+          mv sbom.spdx.json Dockerfile.spdx.json
+          git config user.name "wa thepwagner"
+          git config user.email "70587923+wapwagner@users.noreply.github.com"
+          git add Dockerfile.spdx.json
+          git commit -m'generated SBOM'
+          git push "https://wapwagner:${{ secrets.WAPWAGNER_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" HEAD:${GITHUB_HEAD_REF}
+          exit 1
+      - uses: actions/github-script@v6
+        if: ${{ failure() }}
+        with:
+          script: |
+            const fs = require('fs');
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '```\n' + fs.readFileSync('pkgdiff.txt') + '\n```',
+            });
