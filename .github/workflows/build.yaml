@@ -64,7 +64,7 @@ jobs:
           git commit -m'generated SBOM'
           git push "https://wapwagner:${{ secrets.WAPWAGNER_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" HEAD:${GITHUB_HEAD_REF}
           exit 1
-      - uses: actions/github-script@v6
+      - uses: actions/github-script@9ac08808f993958e9de277fe43a64532a609130e # tag=v6
         if: ${{ failure() }}
         with:
           script: |
