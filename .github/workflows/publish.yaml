@@ -40,7 +40,9 @@ jobs:
           
           STORED_PACKAGES=$(jq -r '.packages[].externalRefs[] | select(.referenceType=="purl") .referenceLocator' Dockerfile.spdx.json| sort)
           printf "Stored packages:\n%s\n" "$STORED_PACKAGES"
-          [ "$(echo ${BUILT_PACKAGES} | sha512sum)" = "$(echo ${STORED_PACKAGES} | sha512sum)" ] || exit 1
+
+          (diff -b -U 0 stored.txt built.txt || true) > pkgdiff.txt
+          [[ -s pkgdiff.txt ]] && exit 1
 
           docker tag ghcr.io/thepwagner-org/duplicity:${{github.sha}} ghcr.io/thepwagner-org/duplicity:latest
           docker push ghcr.io/thepwagner-org/duplicity:latest
