@@ -46,9 +46,11 @@ jobs:
           STORED_PACKAGES=$(jq -r '.packages[].externalRefs[] | select(.referenceType=="purl") .referenceLocator' Dockerfile.spdx.json| sort)
           echo "Stored packages:"
           echo "$STORED_PACKAGES" | tee stored.txt
-          [ "$(echo ${BUILT_PACKAGES} | sha512sum)" = "$(echo ${STORED_PACKAGES} | sha512sum)" ] && exit 0
 
-          (diff -U 0 stored.txt built.txt || true) > pkgdiff.txt
+          (diff -b -U 0 stored.txt built.txt || true) > pkgdiff.txt
+          if [[ ! -s pkgdiff.txt ]]; then
+            exit 0
+          fi
 
           # On mismatch, commit and push an update:
           git reset origin/${GITHUB_HEAD_REF}
