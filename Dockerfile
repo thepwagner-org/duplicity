@@ -1,4 +1,4 @@
-FROM ghcr.io/thepwagner-org/debian-bullseye:latest@sha256:e988258f17daf80e4eaaaba86155fbb130fe9b37e3c256a626961d2e6f042d99
+FROM ghcr.io/thepwagner-org/debian-bullseye:latest@sha256:3be0e1f62e77964617030e133024142ca7350abff4c9cfd83188da126bf78fa0
 
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get -q update && \
