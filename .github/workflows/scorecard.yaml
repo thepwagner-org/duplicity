@@ -1,0 +1,16 @@
+name: Scorecard
+on:
+  branch_protection_rule:
+  schedule:
+    # TODO: probably distribute this
+    - cron: '30 1 * * 6'
+  push:
+    branches: main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    uses: thepwagner-org/actions/.github/workflows/scorecard.yaml@main # FIXME: pin plz
