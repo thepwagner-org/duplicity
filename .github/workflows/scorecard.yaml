@@ -15,5 +15,6 @@ permissions:
 jobs:
   build:
     permissions:
+      contents: read
       id-token: write
     uses: thepwagner-org/actions/.github/workflows/scorecard.yaml@main # FIXME: pin plz
