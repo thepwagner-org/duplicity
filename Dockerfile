@@ -1,4 +1,4 @@
-FROM ghcr.io/thepwagner-org/debian:latest@sha256:a361d9c4592f8df9402c0f91c5bd5d19bf17a51db3b349cf5e3a721497dcdc8c
+FROM ghcr.io/thepwagner-org/debian:latest@sha256:9e31ca8b2ff7b4e514e645b31b865b2982b06f16f0ffd3f937cc53d390138d2c
 
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get -q update && \
